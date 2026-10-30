@@ -1,0 +1,200 @@
+window.invizible {
+  background-color: #0b1220;
+  color: #e8eef7;
+}
+
+.invizible headerbar {
+  background: #0b1220;
+  color: #e8eef7;
+  border-bottom: 1px solid rgba(77, 208, 225, 0.12);
+}
+
+.invizible headerbar label {
+  color: #e8eef7;
+}
+
+.page {
+  background: #0b1220;
+  padding: 18px 20px 24px;
+}
+
+.hero {
+  margin: 4px 0 18px;
+}
+
+.shield {
+  font-size: 28px;
+  color: #4dd0e1;
+}
+
+.shield.off {
+  color: #5c6b80;
+}
+
+.shield-label {
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  color: #8b9bb4;
+}
+
+.module-card {
+  background: #121a2b;
+  border: 1px solid rgba(77, 208, 225, 0.14);
+  border-radius: 18px;
+  padding: 14px 16px;
+  min-height: 74px;
+}
+
+.module-card.active {
+  border-color: rgba(77, 208, 225, 0.45);
+  background: #152033;
+}
+
+.module-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: #f4fbff;
+}
+
+.module-sub {
+  font-size: 12px;
+  color: #8b9bb4;
+}
+
+.module-status {
+  font-size: 12px;
+  font-weight: 600;
+  color: #8b9bb4;
+}
+
+.module-status.ok {
+  color: #26c6da;
+}
+
+.module-status.warn {
+  color: #ffb74d;
+}
+
+.module-status.err {
+  color: #ef5350;
+}
+
+checkbutton.module-check {
+  padding: 4px;
+}
+
+checkbutton.module-check check {
+  min-width: 22px;
+  min-height: 22px;
+  border-radius: 6px;
+  background: #1c2740;
+  border: 1px solid #3d4f6b;
+  box-shadow: none;
+}
+
+checkbutton.module-check:checked check {
+  background: #00acc1;
+  border-color: #4dd0e1;
+  color: #062027;
+}
+
+button.start-btn {
+  min-width: 220px;
+  min-height: 56px;
+  border-radius: 28px;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 1.4px;
+  background: #00acc1;
+  color: #062027;
+  border: none;
+  box-shadow: 0 8px 24px rgba(0, 172, 193, 0.28);
+}
+
+button.start-btn:hover {
+  background: #26c6da;
+}
+
+button.start-btn.running {
+  background: #e53935;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(229, 57, 53, 0.28);
+}
+
+button.start-btn.running:hover {
+  background: #ef5350;
+}
+
+button.start-btn:disabled {
+  opacity: 0.55;
+}
+
+.hint {
+  font-size: 12px;
+  color: #8b9bb4;
+}
+
+.banner {
+  background: #1c2438;
+  border-radius: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 183, 77, 0.3);
+}
+
+.banner label {
+  color: #ffcc80;
+  font-size: 12px;
+}
+
+.proxy-box {
+  background: #121a2b;
+  border-radius: 14px;
+  padding: 12px 14px;
+  border: 1px solid rgba(77, 208, 225, 0.12);
+}
+
+.mono {
+  font-family: monospace;
+  font-size: 12px;
+  color: #b2ebf2;
+}
+
+textview.logs, textview.logs text {
+  background: #070b14;
+  color: #b6c2d6;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #4dd0e1;
+}
+
+.leak-card {
+  background: #121a2b;
+  border-radius: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(77, 208, 225, 0.12);
+}
+
+.leak-ok {
+  border-color: rgba(38, 198, 218, 0.55);
+}
+
+.leak-leak {
+  border-color: rgba(239, 83, 80, 0.7);
+}
+
+.leak-warn {
+  border-color: rgba(255, 183, 77, 0.55);
+}
+
+.app-row {
+  background: #121a2b;
+  border-radius: 12px;
+  padding: 8px 10px;
+  border: 1px solid rgba(77, 208, 225, 0.12);
+}

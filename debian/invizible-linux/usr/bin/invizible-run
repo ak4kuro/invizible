@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+import runpy
+import sys
+sys.path.insert(0, "/usr/lib/invizible-linux")
+runpy.run_path("/usr/lib/invizible-linux/scripts/invizible-run", run_name="__main__")

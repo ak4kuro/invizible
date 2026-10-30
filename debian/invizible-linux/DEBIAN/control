@@ -1,0 +1,15 @@
+Package: invizible-linux
+Version: 0.7.0-1
+Architecture: all
+Maintainer: InviZible Linux contributors <invizible-linux@localhost>
+Installed-Size: 262
+Depends: python3, python3-gi, python3-gi-cairo, python3-cairo, gir1.2-gtk-4.0, gir1.2-adw-1, tor, dnscrypt-proxy, i2pd, nftables, pkexec | policykit-1
+Recommends: lyrebird | obfs4proxy, snowflake-client | snowflake, torsocks
+Suggests: firejail, gir1.2-ayatanaappindicator3-0.1
+Section: net
+Priority: optional
+Homepage: https://github.com/Gedsh/InviZible
+Description: panel GTK para DNSCrypt, Tor, I2P y cortafuegos
+ InviZible Linux activa DNSCrypt, Tor, I2P y un cortafuegos nftables
+ desde una sola ventana (GTK4 / libadwaita), inspirado en InviZible Lite.
+ No es un port oficial del APK.

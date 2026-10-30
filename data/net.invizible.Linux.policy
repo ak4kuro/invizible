@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+<policyconfig>
+  <vendor>InviZible Linux</vendor>
+  <action id="net.invizible.Linux.helper">
+    <description>Gestionar DNS y cortafuegos de InviZible Linux</description>
+    <description xml:lang="es">Gestionar DNS y cortafuegos de InviZible Linux</description>
+    <message>InviZible Linux necesita privilegios para el cortafuegos nftables y el DNS del sistema.</message>
+    <message xml:lang="es">InviZible Linux necesita privilegios para el cortafuegos nftables y el DNS del sistema.</message>
+    <defaults>
+      <allow_any>no</allow_any>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/local/lib/invizible-linux/helper</annotate>
+    <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+  </action>
+</policyconfig>

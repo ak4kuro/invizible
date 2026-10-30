@@ -1,0 +1,48 @@
+# Maintainer: InviZible Linux contributors
+# Construir e instalar TODO (panel, deps, lyrebird, oniux):
+#   ./install-arch.sh
+# Solo el .pkg.tar.zst:
+#   makepkg -s && ./install-local.sh
+# makepkg -si falla si pacman tiene LocalFileSigLevel = Required (paquete local sin .sig).
+
+pkgname=invizible-linux
+pkgver=0.7.0
+pkgrel=5
+pkgdesc="Panel GTK para DNSCrypt, Tor, I2P y cortafuegos (inspirado en InviZible Lite)"
+arch=('any')
+url="https://github.com/Gedsh/InviZible"
+license=('GPL3')
+depends=(
+  python
+  python-gobject
+  python-cairo
+  gtk4
+  libadwaita
+  tor
+  dnscrypt-proxy
+  i2pd
+  polkit
+  nftables
+  torsocks
+)
+optdepends=(
+  'go: compilar lyrebird (puentes obfs4) desde el instalador'
+  'rust: fallback si oniux no sale del AUR'
+  'oniux: aislamiento por aplicación (lo instala aur/install-arch.sh)'
+  'firejail: fallback de aislamiento'
+  'libayatana-appindicator: watcher de bandeja en GNOME'
+  'gnome-shell-extension-appindicator: icono de bandeja en GNOME'
+)
+source=()
+sha256sums=()
+
+check() {
+  cd "$startdir/.."
+  PYTHONPATH="$PWD/src" python -m unittest discover -s tests -v
+}
+
+package() {
+  local root
+  root="$(cd "$startdir/.." && pwd)"
+  bash "$root/packaging/install-files.sh" "$pkgdir"
+}

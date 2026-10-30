@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=InviZible Linux
+GenericName=Privacidad de red
+Comment=DNSCrypt, Tor, I2P y cortafuegos para Linux
+Exec=invizible-linux
+Icon=net.invizible.Linux
+Terminal=false
+Categories=Network;Security;
+Keywords=tor;dns;i2p;firewall;privacy;anonimato;
+StartupNotify=true

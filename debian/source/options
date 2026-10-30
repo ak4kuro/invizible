@@ -1,0 +1,5 @@
+tar-ignore = .git
+tar-ignore = aur
+tar-ignore = __pycache__
+tar-ignore = .venv
+tar-ignore = .cursor

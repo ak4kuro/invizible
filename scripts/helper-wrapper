@@ -1,0 +1,12 @@
+#!/bin/sh
+HERE="$(CDPATH= cd -- "$(dirname "$0")" && pwd)"
+if [ -f "$HERE/invizible_linux/helper.py" ]; then
+  exec /usr/bin/python3 "$HERE/invizible_linux/helper.py" "$@"
+fi
+if [ -f "$HERE/../src/invizible_linux/helper.py" ]; then
+  exec /usr/bin/python3 "$HERE/../src/invizible_linux/helper.py" "$@"
+fi
+if [ -f /usr/lib/invizible-linux/invizible_linux/helper.py ]; then
+  exec /usr/bin/python3 /usr/lib/invizible-linux/invizible_linux/helper.py "$@"
+fi
+exec /usr/bin/python3 /usr/local/lib/invizible-linux/invizible_linux/helper.py "$@"

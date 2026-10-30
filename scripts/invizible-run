@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+"""Lanza un .desktop a través de oniux/torsocks o en claro."""
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+for candidate in (ROOT / "src", ROOT):
+    if (candidate / "invizible_linux").is_dir():
+        sys.path.insert(0, str(candidate))
+        break
+
+from gi.repository import Gio  # noqa: E402
+
+from invizible_linux.oniuxctl import ensure_cargo_path, launch_app  # noqa: E402
+
+
+def _command_for(app_id: str) -> str:
+    info = Gio.DesktopAppInfo.new(app_id)
+    if info is None:
+        # a veces falta el sufijo
+        if not app_id.endswith(".desktop"):
+            info = Gio.DesktopAppInfo.new(app_id + ".desktop")
+    if info is None:
+        raise SystemExit(f"No se encontró {app_id}")
+    return info.get_commandline() or info.get_executable() or ""
+
+
+def main() -> int:
+    ensure_cargo_path()
+    if len(sys.argv) < 3 or sys.argv[1] not in {"--tor", "--tor-strict", "--tor-lax", "--direct"}:
+        print("Uso: invizible-run --tor-strict|--tor-lax|--direct app.desktop", file=sys.stderr)
+        return 2
+    mode = sys.argv[1]
+    through = mode in {"--tor", "--tor-strict", "--tor-lax"}
+    isolation = "lax" if mode == "--tor-lax" else "strict"
+    launch_app(
+        _command_for(sys.argv[2]),
+        through_tor=through,
+        isolation=isolation if through else "",
+        socks_user=sys.argv[2][:40],
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

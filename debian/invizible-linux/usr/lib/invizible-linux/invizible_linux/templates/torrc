@@ -1,0 +1,16 @@
+# Generado por InviZible Linux. No edites a mano si usas la GUI.
+SocksPort 127.0.0.1:9050 IsolateClientAddr IsolateSOCKSAuth IsolateClientProtocol IsolateDestPort IsolateDestAddr
+ControlPort 127.0.0.1:9051
+CookieAuthentication 1
+CookieAuthFile @COOKIE@
+DataDirectory @DATADIR@
+PidFile @PIDFILE@
+Log notice file @LOGFILE@
+TransPort 127.0.0.1:9040
+DNSPort 127.0.0.1:5353
+AutomapHostsOnResolve 1
+VirtualAddrNetworkIPv4 10.192.0.0/10
+AvoidDiskWrites 1
+SafeSocks 1
+TestSocks 1
+WarnUnsafeSocks 1
